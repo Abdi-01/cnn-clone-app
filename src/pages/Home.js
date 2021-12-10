@@ -85,7 +85,10 @@ const HomePage = (props) => {
                                 <Image source={{ uri: item.urlToImage }} style={{ width: 75, height: 75 }} />
                                 <View style={{ padding: 8, width: "75%" }}>
                                     <Text style={{ fontWeight: "700" }}>{item.title}</Text>
-                                    <Link to="">
+                                    <Link to={{
+                                        pathname: "/detail",
+                                        state: item
+                                    }}>
                                         <Text style={{ textAlign: "right" }}>Read More</Text>
                                     </Link>
                                 </View>
