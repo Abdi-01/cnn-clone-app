@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View, FlatList } from 'react-native';
-import { Card, Image, Text } from 'react-native-elements';
+import { ButtonGroup, Card, Icon, Image, Text } from 'react-native-elements';
 import HeaderComp from '../components/HeaderComp';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import axios from 'axios';
@@ -89,7 +89,7 @@ const HomePage = (props) => {
                                         pathname: "/detail",
                                         state: item
                                     }}>
-                                        <Text style={{ textAlign: "right" }}>Read More</Text>
+                                        <Text style={{ textAlign: "right", backgroundColor: "white" }}>Read More</Text>
                                     </Link>
                                 </View>
                             </View>
@@ -98,6 +98,23 @@ const HomePage = (props) => {
                     keyExtractor={(item, index) => index.toString()}
                     refreshing={refresh}
                     onRefresh={getBerita}
+                />
+            </View>
+            <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                <Icon
+                    name="home"
+                    type='font-awesome'
+                    color='#2d3436'
+                />
+                <Icon
+                    name="newspaper-o"
+                    type='font-awesome'
+                    color='#2d3436'
+                />
+                <Icon
+                    name="user-o"
+                    type='font-awesome'
+                    color='#2d3436'
                 />
             </View>
         </View>
